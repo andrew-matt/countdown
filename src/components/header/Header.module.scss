@@ -1,0 +1,29 @@
+.header {
+
+  & picture:first-child img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  & picture:nth-child(2) img {
+    position: absolute;
+    top: 80px;
+    left: calc(50% - 64px);
+
+    @media (min-width: 768px) {
+      top: 100px;
+      left: calc(50% - 95px);
+    }
+
+    @media (min-width: 1920px) {
+      top: 60px;
+    }
+  }
+
+  & picture:nth-child(3) img {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
