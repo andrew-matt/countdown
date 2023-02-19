@@ -1,13 +1,17 @@
+@import "src/styles/sass/variables";
+
 .timer__value {
   font-size: 36px;
   font-weight: 600;
   line-height: 36px;
   text-align: center;
-  color: #162C4E;
+  color: $base-color;
+  margin-bottom: 6px;
 
   @media (min-width: 1920px) {
     font-size: 72px;
     line-height: 72px;
+    margin-bottom: 3px;
   }
 }
 

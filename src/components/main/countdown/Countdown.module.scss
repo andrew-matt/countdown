@@ -1,4 +1,5 @@
 @import "src/styles/sass/utils";
+@import "src/styles/sass/variables";
 
 .countdown {
   display: flex;
@@ -16,14 +17,14 @@
     }
 
     .countdown__title {
-      margin-bottom: 29px;
+      margin-bottom: 16px;
 
       @media (min-width: 768px) {
-        margin-bottom: 33px;
+        margin-bottom: 20px;
       }
 
       @media (min-width: 1920px) {
-        margin-bottom: 27px;
+        margin-bottom: 8px;
       }
     }
 
@@ -33,7 +34,7 @@
       line-height: 37px;
       text-align: center;
       text-transform: uppercase;
-      color: #162C4E;
+      color: $base-color;
       opacity: 0.39;
 
       @media (min-width: 1920px) {
@@ -43,7 +44,7 @@
     }
 
     .text {
-      line-height: rem(24);
+      line-height: 150%;
       text-align: center;
       color: rgba(0, 0, 0, 0.8);
 
@@ -53,17 +54,17 @@
     }
 
     .countdown__text {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       max-width: rem(286);
 
       @media (min-width: 1920px) {
         max-width: rem(423);
-        margin-bottom: 46px;
+        margin-bottom: 32px;
       }
     }
 
     .countdown__event-text {
-      margin-bottom: 17px;
+      margin-bottom: 15px;
     }
 
     .countdown__link {
@@ -75,9 +76,18 @@
       color: #FFFFFF;
       padding: 16px 20px 17px 28px;
       display: flex;
+      margin-bottom: 86px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 172px;
+      }
+
+      @media (min-width: 1920px) {
+        margin-bottom: 76px;
+      }
 
       & span {
-        margin-right: 38px;
+        margin-right: 34.25px;
       }
     }
   }

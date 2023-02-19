@@ -1,12 +1,12 @@
 .header {
-  margin-bottom: 192px;
+  height: 186px;
 
   @media (min-width: 768px) {
-    margin-bottom: 332px;
+    height: 326px;
   }
 
   @media (min-width: 1920px) {
-    margin-bottom: 224px;
+    height: 213px;
   }
 
   & picture:first-child img {
