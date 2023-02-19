@@ -20,11 +20,13 @@ export const Header: FC = () => {
         <source srcSet={topLeftCornerMobile} media="(max-width: 767px)" />
         <img src={topLeftCornerMobile} alt="top-left-corner" />
       </picture>
-      <picture>
-        <source srcSet={logoMobile} media="(max-width: 767px)" />
-        <source srcSet={logoTablet} media="(min-width: 768px)" />
-        <img src={logoMobile} alt="logo" />
-      </picture>
+      <a href="https://andrew-matt.github.io/countdown">
+        <picture>
+          <source srcSet={logoMobile} media="(max-width: 767px)" />
+          <source srcSet={logoTablet} media="(min-width: 768px)" />
+          <img src={logoMobile} alt="logo" />
+        </picture>
+      </a>
       <picture>
         <source srcSet={topRightCornerDesktop} media="(min-width: 1920px)" />
         <source srcSet={topRightCornerTablet} media="(min-width: 768px)" />

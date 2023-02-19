@@ -3,8 +3,10 @@
   justify-content: space-between;
   width: 100%;
   max-width: 358px;
+  margin-bottom: 46px;
 
   @media (min-width: 1920px) {
     max-width: 588px;
+    margin-bottom: 79px;
   }
 }

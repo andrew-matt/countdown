@@ -42,18 +42,42 @@
       }
     }
 
-    .countdown__text {
-      font-size: rem(16);
+    .text {
       line-height: rem(24);
       text-align: center;
+      color: rgba(0, 0, 0, 0.8);
+
+      @media (min-width: 1920px) {
+        font-size: rem(18);
+      }
+    }
+
+    .countdown__text {
       margin-bottom: 50px;
       max-width: rem(286);
 
       @media (min-width: 1920px) {
         max-width: rem(423);
-        font-size: rem(18);
-        line-height: rem(24);
         margin-bottom: 46px;
+      }
+    }
+
+    .countdown__event-text {
+      margin-bottom: 17px;
+    }
+
+    .countdown__link {
+      background: #1D4169;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 27px;
+      color: #FFFFFF;
+      padding: 16px 20px 17px 28px;
+      display: flex;
+
+      & span {
+        margin-right: 38px;
       }
     }
   }
