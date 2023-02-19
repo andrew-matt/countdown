@@ -1,4 +1,13 @@
 .header {
+  margin-bottom: 192px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 332px;
+  }
+
+  @media (min-width: 1920px) {
+    margin-bottom: 224px;
+  }
 
   & picture:first-child img {
     position: absolute;

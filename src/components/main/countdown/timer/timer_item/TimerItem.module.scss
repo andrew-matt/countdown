@@ -1,0 +1,40 @@
+.timer__value {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: center;
+  color: #162C4E;
+
+  @media (min-width: 1920px) {
+    font-size: 72px;
+    line-height: 72px;
+  }
+}
+
+.timer__measure-unit {
+  position: relative;
+
+  & picture {
+    display: flex;
+  }
+
+  & div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    line-height: 12px;
+    color: #FFFFFF;
+
+    @media (min-width: 1920px) {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}
+
+.timer__value-colon {
+  @extend .timer__value;
+}
+
