@@ -1,27 +1,84 @@
-import { FC } from 'react';
+import { ChangeEvent, FC, FormEvent, useState } from 'react';
 
 import style from './Footer.module.scss';
 
 import arrowRight from 'assets/icons/footer/arrow-right.svg';
 import arrowRightDesktop from 'assets/icons/footer/desktop/arrow-right.svg';
+import { subscribe } from 'async/async';
 
 export const Footer: FC = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [inputError, setInputError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onInputChangeHandler = (event: ChangeEvent<HTMLInputElement>): void => {
+    setInputError(null);
+    setInputValue(event.currentTarget.value);
+  };
+
+  const validateEmail = (email: string): boolean => {
+    const regExp =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return regExp.test(String(email).toLowerCase());
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
+    event.preventDefault();
+
+    if (inputValue === '') {
+      setInputError('Email is required');
+    } else if (!validateEmail(inputValue)) {
+      setInputError('Invalid email address');
+    } else {
+      try {
+        setIsSubmitting(true);
+        setInputValue('');
+        const promise = await subscribe(inputValue);
+
+        if (typeof promise === 'object') {
+          console.log(promise);
+        } else {
+          console.warn(promise);
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+  };
+
   return (
     <footer className={style.footer}>
-      <div className={style['footer__input-wrapper']}>
-        <input
-          type="text"
-          placeholder="Enter your Email and get notified"
-          spellCheck={false}
-        />
-        <div className={style['footer__image-container']}>
-          <picture>
-            <source srcSet={arrowRightDesktop} media="(min-width: 1920px)" />
-            <source srcSet={arrowRight} />
-            <img src={arrowRight} alt="arrow-right" />
-          </picture>
+      <form onSubmit={handleSubmit}>
+        <div className={style['footer__input-wrapper']}>
+          {inputError && (
+            <div className={style['footer__input-error-wrapper']}>
+              <div className={style['footer__input-error']}>{inputError}</div>
+            </div>
+          )}
+          <input
+            type="text"
+            placeholder="Enter your Email and get notified"
+            spellCheck={false}
+            value={inputValue}
+            onChange={onInputChangeHandler}
+            onBlur={() => setInputError(null)}
+          />
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={style['footer__submit-button']}
+          >
+            <picture>
+              <source srcSet={arrowRightDesktop} media="(min-width: 1920px)" />
+              <source srcSet={arrowRight} />
+              <img src={arrowRight} alt="arrow-right" />
+            </picture>
+          </button>
         </div>
-      </div>
+      </form>
     </footer>
   );
 };

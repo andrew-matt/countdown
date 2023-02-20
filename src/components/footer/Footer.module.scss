@@ -45,8 +45,11 @@
 
   .footer__input-wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .footer__image-container {
+    .footer__submit-button {
       position: absolute;
       top: 4px;
       right: 4px;
@@ -58,6 +61,7 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      border: none;
 
       @media (min-width: 1920px) {
         width: 43px;
@@ -68,6 +72,37 @@
 
       & picture {
         display: flex;
+        user-select: none;
+
+        & img {
+          user-select: none;
+        }
+      }
+    }
+
+    .footer__input-error-wrapper {
+      position: relative;
+      width: 0;
+      height: 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        border: 10px solid transparent;
+        border-top: 10px solid red;
+        transform: translate(-50%, -50%);
+      }
+
+      .footer__input-error {
+        position: absolute;
+        color: #FFFFFF;
+        background-color: #DF2224;
+        border: 1px solid red;
+        border-radius: 3px;
+        padding: 5px;
+        bottom: 9px;
+        transform: translate(-50%);
+        white-space: nowrap;
       }
     }
   }
