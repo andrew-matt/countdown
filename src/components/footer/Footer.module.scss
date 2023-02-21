@@ -63,6 +63,14 @@
       cursor: pointer;
       border: none;
 
+      &:hover {
+
+        & picture img {
+          transition: 0.5s;
+          transform: rotate(360deg);
+        }
+      }
+
       @media (min-width: 1920px) {
         width: 43px;
         height: 43px;
@@ -72,11 +80,6 @@
 
       & picture {
         display: flex;
-        user-select: none;
-
-        & img {
-          user-select: none;
-        }
       }
     }
 

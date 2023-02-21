@@ -23,6 +23,11 @@
 
     & img {
       transform: translate(-50%);
+      transition: 0.3s;
+
+      &:hover {
+        transform: translate(-50%) scale(1.03);
+      }
     }
 
     @media (min-width: 768px) {

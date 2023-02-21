@@ -89,6 +89,14 @@
       & span {
         margin-right: 34.25px;
       }
+
+      &:hover {
+
+        & img {
+          transition: 0.5s;
+          transform: rotate(360deg);
+        }
+      }
     }
   }
 }

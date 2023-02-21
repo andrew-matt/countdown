@@ -6,7 +6,17 @@ import arrowRight from 'assets/icons/footer/arrow-right.svg';
 import arrowRightDesktop from 'assets/icons/footer/desktop/arrow-right.svg';
 import { subscribe } from 'async/async';
 
-export const Footer: FC = () => {
+type FooterPropsType = {
+  setShowModal: (value: boolean) => void;
+  setModalTitle: (title: string) => void;
+  setModalText: (text: string) => void;
+};
+
+export const Footer: FC<FooterPropsType> = ({
+  setShowModal,
+  setModalTitle,
+  setModalText,
+}) => {
   const [inputValue, setInputValue] = useState('');
   const [inputError, setInputError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,14 +47,18 @@ export const Footer: FC = () => {
         const promise = await subscribe(inputValue);
 
         if (typeof promise === 'object') {
-          console.log(promise);
+          setModalTitle('Success!');
+          setModalText('You have successfully subscribed to the email newsletter');
         } else {
-          console.warn(promise);
+          setModalTitle('Failure!');
+          setModalText(promise);
         }
       } catch (error) {
-        console.error(error);
+        setModalTitle('Error!');
+        setModalText('Sorry, some error occurred...');
       } finally {
         setIsSubmitting(false);
+        setShowModal(true);
       }
     }
   };
