@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/countdown/static/css/main.9f218878.css",
-    "main.js": "/countdown/static/js/main.9c023dd4.js",
+    "main.js": "/countdown/static/js/main.fd4cc81d.js",
     "static/js/787.482db2ac.chunk.js": "/countdown/static/js/787.482db2ac.chunk.js",
     "static/media/logo.svg": "/countdown/static/media/logo.80df50cd8adeb61efce6b691a769603b.svg",
     "static/media/top-left-corner.svg": "/countdown/static/media/top-left-corner.cfa546d677f563a18853b4d08ea8249f.svg",
@@ -12,11 +12,11 @@
     "static/media/arrow-right.svg": "/countdown/static/media/arrow-right.3938f9bdd7bdc3cb139a08a00964ad79.svg",
     "static/media/button-arrow.svg": "/countdown/static/media/button-arrow.53562820eda586c20a7e22ade3b1c20f.svg",
     "main.9f218878.css.map": "/countdown/static/css/main.9f218878.css.map",
-    "main.9c023dd4.js.map": "/countdown/static/js/main.9c023dd4.js.map",
+    "main.fd4cc81d.js.map": "/countdown/static/js/main.fd4cc81d.js.map",
     "787.482db2ac.chunk.js.map": "/countdown/static/js/787.482db2ac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9f218878.css",
-    "static/js/main.9c023dd4.js"
+    "static/js/main.fd4cc81d.js"
   ]
 }
